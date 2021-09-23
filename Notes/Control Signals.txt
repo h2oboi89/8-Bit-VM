@@ -1,0 +1,35 @@
+Name    Description
+
+HLT     Halt.                   Halts the CPU
+
+RST     Reset.                  Resets the CPU.
+
+MRS     Memory Register In.     Store value on bus into memory register.
+
+MI      Memory In.              Store value on bus into memory.
+
+MO      Memory Out.             Load value in memory onto bus.
+
+R1      Register ID 1.          Which register is being used #1
+
+R1I     Regsiter ID 1 in.       Load register ID #1
+
+R2      Register ID 2.          Which register is being used #2
+
+R2I     Regsiter ID 2 in.       Load register ID #2
+
+RI      Register In.            Store value on bus into register.
+
+RO      Register Out.           Load value in register onto buss
+
+AO      ALU Out.                Put value in ALU on bus
+
+FI      Flag In.                ALU flags -> flag register
+
+AOP     ALU Operation.
+
+PCI     PC In                   Load value on bus into PC
+
+PCO     PC Out                  Put value in PC on bus
+
+PCP     PC Plus                 Increment PC

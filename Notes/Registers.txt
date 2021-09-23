@@ -1,0 +1,17 @@
+Name    Description
+
+MEM     Memory Register (value to load from RAM)
+
+PC      Program Counter (address of next instruction)
+
+FLG     ALU Flags
+            - Carry     (overflow)
+            - Zero
+            - Equal
+            - Less
+            - Greater
+            - Negative  (underflow)
+
+General Purpose
+    - 0 through 7 (8 total)
+    - Register 0 doubles as the accumulator for the ALU
