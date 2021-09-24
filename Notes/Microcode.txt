@@ -1,5 +1,6 @@
 # FIXME: deconflict Arg Reg and Inst Reg outputting on same step
 # TODO: figure out Register input and output MUXes
+# TODO: replace with abbreviated signal names for brevity? 
 
 ================================================
     Common for all instructions
