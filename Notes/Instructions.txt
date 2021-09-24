@@ -16,25 +16,26 @@ ADD     0b 0010 0001 0xAB   Addition.       A + B -> ACC
 
 SUB     0b 0010 0010 0xAB   Subtraction.    A - B -> ACC
 
-SL      0b 0010 0011 0xAV   Shift Left.     A << V -> ACC
+AND     0b 0010 0011 0xAB   Bitwise AND.    A & B -> ACC
 
-SR      0b 0010 0100 0xAV   Shift Right.    A >> V -> ACC
+OR      0b 0010 0100 0xAB   Bitwise OR.     A | B -> ACC
 
-AND     0b 0010 0101 0xAB   Bitwise AND.    A & B -> ACC
+XOR     0b 0010 0101 0xAB   Bitwise XOR.    A ^ B -> ACC
 
-OR      0b 0010 0110 0xAB   Bitwise OR.     A | B -> ACC
+SL      0b 0010 0110 0xAV   Shift Left.     A << V -> ACC
 
-NOT     0b 0010 0111 0xA0   Bitwise NOT.    !A -> ACC
+SR      0b 0010 0111 0xAV   Shift Right.    A >> V -> ACC
 
-XOR     0b 0010 1000 0xAB   Bitwise XOR.    A ^ B -> ACC
+CMP     0b 0010 1000 0xAB   Compare.        Compare A and B -> Flags
 
-CMP     0b 0010 1001 0xAB   Compare.        Compare A and B -> Flags
+CPZ     0b 0010 1001 0xA0   Compare zero.   Compare A to 0 -> Flags
 
-CPZ     0b 0010 1010 0xA0   Compare zero.   Compare A to 0 -> Flags
+INC     0b 0010 1010 0xA1   Increment       A + 1 -> ACC
 
-INC     0b 0010 1011 0xA0   Increment       A + 1 -> ACC
+DEC     0b 0010 1011 0xA1   Decrement       A - 1 -> ACC
+# NOTE: Make INC and DEC ADDI and SUBI and let program specify a 4 bit immediate value?
 
-DEC     0b 0010 1100 0xA0   Decrement       A - 1 -> ACC
+NOT     0b 0010 1100 0xA0   Bitwise NOT.    !A -> ACC
 
 ???     0x2d - 0x40
 

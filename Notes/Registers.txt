@@ -2,6 +2,10 @@ Name    Description
 
 MEM     Memory Register (value to load from RAM)
 
+IR      Instruction Register
+
+AR      Argument Register
+
 PC      Program Counter (address of next instruction)
 
 FLG     ALU Flags

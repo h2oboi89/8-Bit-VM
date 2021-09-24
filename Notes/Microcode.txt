@@ -1,0 +1,66 @@
+# FIXME: deconflict Arg Reg and Inst Reg outputting on same step
+# TODO: figure out Register input and output MUXes
+
+================================================
+    Common for all instructions
+================================================
+
+# Fetch Instruction
+ PC Out         | Mem Reg In
+ Mem Out        | Inst Reg In   | PC Inc
+
+# Fetch Args
+ PC Out         | Mem Reg In
+ Mem Out        | Arg Reg In    | PC Inc
+
+================================================
+
+# NOP
+n/a
+
+# LDI R, V (V -> R)
+ Inst Reg Out   | Reg IMUX In
+ Arg Reg Out    | Reg IMUX Out  | R Reg In
+
+# LDA R, A (V @ A -> R)
+ Arg Reg Out    | Mem Reg In    | Inst Reg Out   | Reg IMUX In
+ Reg IMUX Out   | R Reg In
+
+# STA R, A (V in R -> A (addr))
+ Inst Reg Out   | Reg OMUX In   | Arg Reg Out   | Mem Reg In
+ Reg OMUX Out   | R Reg Out     | Mem In
+
+# MOV A, B (A -> B)
+ Arg Reg Out    | Reg IMUX In   | Reg OMUX In
+ Reg IMUX Out   | Reg OMUX Out  | A Reg Out     | B Reg In
+
+# ALU Binary Op (2 Registers) (ADD, SUB, AND, OR, XOR, CMP) (A OP B -> ACC)
+ Arg Reg Out    | Reg OMUX In
+ A Reg Out      | B Reg Out     | ALU A In      | ALU B In      | Inst Reg Out  | ALU Op In
+ ALU Out        | ACC Reg In    | ALU Flag In
+
+# ALU Binary Op (1 Reg, 1 Value) (SL, SR, CPZ, INC, DEC) (A OP V -> ACC)
+ Arg Reg Out    | Reg OMUX In
+ A Reg Out      | Arg Reg Out   | ALU A In      | ALU B In      | Inst Reg Out  | ALU Op In
+ ALU Out        | ACC Reg In    | ALU Flag In
+
+# ALU Unary Op (NOT) (!A -> ACC)
+ Arg Reg Out    | Reg OMUX In
+ A Reg Out      | ALU A In      | Inst Reg Out  | ALU Op In
+
+# JMP
+ Arg Reg Out    | PC In
+
+# Jump with Bit set (JC, JZ, JE, JLT, JLE, JGT, JGE, JN)
+ TODO: figure this out
+
+# Jump with Bit not set (JNZ, JNE, JNN)
+ TODO: figure this out
+
+# RST
+ TODO: figure this out
+
+# HLT
+ Halt
+
+                |               |               |               |               |

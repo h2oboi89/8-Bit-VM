@@ -1,35 +1,36 @@
-Name    Description
+HLT     Halt (stops clock)
+RST     Reset (resets PC, Inst Step Register) - what else?
 
-HLT     Halt.                   Halts the CPU
+PCI     PC In
+PCO     PC Out
+PCP     PC Plus (increment PC)
 
-RST     Reset.                  Resets the CPU.
+MRI     Memory Register In
+MRO     Memory Register Out (Not required since it is always enabled)
 
-MRS     Memory Register In.     Store value on bus into memory register.
+MO      Memory Out
+MI      Memory In
 
-MI      Memory In.              Store value on bus into memory.
+IRI     Inst Reg In
+IRO     Inst Reg Out
 
-MO      Memory Out.             Load value in memory onto bus.
+ARI     Arg Reg In 
+ARO     Arg Reg Out
 
-R1      Register ID 1.          Which register is being used #1
+R#I     General Purpose Reg In
+R#O     General Purpose Reg Out
 
-R1I     Regsiter ID 1 in.       Load register ID #1
+RII     Register Input MUX In
+ROI     Register Input MUX Out
 
-R2      Register ID 2.          Which register is being used #2
+ROI     Register Output MUX In
+ROO     Register Output MUX Out
 
-R2I     Regsiter ID 2 in.       Load register ID #2
+AAI     ALU A In
+ABI     ALU B In
+AOI     ALU Op In
+AVO     ALU Value Out
+AFO     ALU Flag Out
 
-RI      Register In.            Store value on bus into register.
-
-RO      Register Out.           Load value in register onto buss
-
-AO      ALU Out.                Put value in ALU on bus
-
-FI      Flag In.                ALU flags -> flag register
-
-AOP     ALU Operation.
-
-PCI     PC In                   Load value on bus into PC
-
-PCO     PC Out                  Put value in PC on bus
-
-PCP     PC Plus                 Increment PC
+FI      ALU Flag Reg In
+FO      ALU Flag Reg Out
